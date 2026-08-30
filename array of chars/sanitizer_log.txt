@@ -1,0 +1,46 @@
+nekida@fedora:~/Документы/embedded-learning/array of chars$ ./array_of_chars 
+=================================================================
+==12145==ERROR: AddressSanitizer: global-buffer-overflow on address 0x000000403083 at pc 0x7fc65de4021d bp 0x7ffd42cebf30 sp 0x7ffd42ceb700
+READ of size 4 at 0x000000403083 thread T0
+    #0 0x7fc65de4021c in puts.part.0 (/lib64/libasan.so.8+0x4021c) (BuildId: 61e8165ca90f7a4f06b73f064a938c76deaae079)
+    #1 0x000000400517 in main /home/nekida/Документы/embedded-learning/array of chars/array_of_chars.c:43
+    #2 0x7fc65d40a680 in __libc_start_call_main (/lib64/libc.so.6+0x3680) (BuildId: 5bd941be836f538fe5e10eff508f7f5dd94905a6)
+    #3 0x7fc65d40a797 in __libc_start_main@GLIBC_2.2.5 (/lib64/libc.so.6+0x3797) (BuildId: 5bd941be836f538fe5e10eff508f7f5dd94905a6)
+    #4 0x000000400434 in _start (/home/nekida/Документы/embedded-learning/array of chars/array_of_chars+0x400434) (BuildId: b7a761a58ff788cd0f261452b3c4c7baad3c5738)
+
+0x000000403083 is located 0 bytes after global variable 'array1_1' defined in 'array_of_chars.c:16:13' (0x000000403080) of size 3
+0x000000403083 is located 61 bytes before global variable 'array1_2' defined in 'array_of_chars.c:17:13' (0x0000004030c0) of size 4
+  'array1_2' is ascii string 'abc'
+SUMMARY: AddressSanitizer: global-buffer-overflow /home/nekida/Документы/embedded-learning/array of chars/array_of_chars.c:43 in main
+Shadow bytes around the buggy address:
+  0x000000402e00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x000000402e80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x000000402f00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x000000402f80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x000000403000: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x000000403080:[03]f9 f9 f9 f9 f9 f9 f9 04 f9 f9 f9 f9 f9 f9 f9
+  0x000000403100: 04 f9 f9 f9 f9 f9 f9 f9 00 f9 f9 f9 f9 f9 f9 f9
+  0x000000403180: 00 03 f9 f9 f9 f9 f9 f9 00 00 00 00 f9 f9 f9 f9
+  0x000000403200: 00 00 f9 f9 f9 f9 f9 f9 00 00 00 00 f9 f9 f9 f9
+  0x000000403280: 00 00 f9 f9 f9 f9 f9 f9 00 00 00 00 f9 f9 f9 f9
+  0x000000403300: 00 00 00 00 00 f9 f9 f9 f9 f9 f9 f9 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==12145==ABORTING
