@@ -7,7 +7,7 @@ int main (void)
     while ((c = getchar()) != EOF) {    
         if (c == ' ')
             ++cnt_space;
-        else if (c != ' ' && cnt_space != 0) {
+        else if (cnt_space != 0) {
             cnt_space = 0;
             putchar(' ');
             putchar(c);
@@ -15,6 +15,9 @@ int main (void)
             putchar(c);
         
     }
+
+    if (cnt_space != 0)
+        putchar(' ');
 
     return 0;
 }
