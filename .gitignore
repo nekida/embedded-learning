@@ -9,10 +9,6 @@
 *.out
 *.map
 
-# Current exercise executables
-K_and_R/Ex_1_16
-array_of_chars/array_of_chars
-
 # Debug / crash artifacts
 core
 core.*
