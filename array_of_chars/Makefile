@@ -1,5 +1,5 @@
 all:
-	cc array_of_chars.c -o array_of_chars
+	cc array_of_chars.c -o array_of_chars.out
 
 san:
 	gcc -std=c17 -Wall -Wextra -Wpedantic -g \

@@ -1,0 +1,31 @@
+# Object files
+*.o
+*.obj
+
+# Firmware / binary artifacts
+*.elf
+*.hex
+*.bin
+*.out
+*.map
+
+# Current exercise executables
+K_and_R/Ex_1_16
+array_of_chars/array_of_chars
+
+# Debug / crash artifacts
+core
+core.*
+.gdb_history
+
+# Temporary files
+*~
+*.swp
+*.swo
+
+# Local editor configuration
+.vscode/
+
+# Build directories
+build/
+Build/
