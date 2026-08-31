@@ -44,10 +44,10 @@ int main (void)
     }
 
     if (max2 > 0)
-        printf ("Len of big string: %d", max2);
+        printf ("Len of big string: %d\n", max2);
 
     if (max > 0)
-        printf ("%s", longest);
+        printf ("%s\n", longest);
 
     return 0;
 }

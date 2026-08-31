@@ -1,5 +1,9 @@
-Ex_1_16:
-	cc -std=c17 -Wall -Wextra -Wpedantic Ex_1_16.c -o Ex_1_16.out
+CC := gcc
+FLAGS := -std=c17 -Wall -Wextra -Wpedantic
+
+build:
+	@test -n "$(SRC)" || (echo "Использование: make SRC=путь/файл.c"; exit 1)
+	$(CC) $(FLAGS) "$(SRC)" -o "$(SRC:.c=.out)"
 
 clean:
-	rm -f Ex_1_16.out
+	rm -f *.out
