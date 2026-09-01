@@ -8,5 +8,5 @@ build:
 	$(CC) $(CFLAGS) "$(SRC)" -o "$(SRC:.c=.out)"
 
 clean:
-	rm -f *.out \
+	rm -f *.out
 	rm -f */*.out
