@@ -33,5 +33,8 @@ int main (void)
         }
     }
 
+    if (state_word == FIRST_WORD)
+        putchar('\n');
+
     return 0;
 }
