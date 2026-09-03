@@ -26,6 +26,10 @@ int main (void)
         }
     }
 
+    if (state == IN && cnt_chars != 0) {
+        ++histogram[cnt_chars];
+    }
+
     for (int i = 0; i < 10; ++i)
         printf ("%d ", histogram[i]);
 
