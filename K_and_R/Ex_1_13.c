@@ -7,7 +7,7 @@
 
 int main (void)
 {
-    int c, state, cnt_chars, histogram[10];
+    int c, state, cnt_chars, histogram[LEN_WORD];
 
     state = OUT;
     cnt_chars = 0;
@@ -38,8 +38,12 @@ int main (void)
             ++histogram[cnt_chars];
     }
 
-    for (int i = 0; i < 10; ++i)
-        printf ("%d ", histogram[i]);
+    for (int i = 1; i < LEN_WORD; ++i) {
+        printf ("%d - ", histogram[i]);
+        for (int j = 0; j < histogram[i]; ++j)
+            printf ("*");
+        printf ("\n");
+    }
 
     putchar('\n');
 
