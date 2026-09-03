@@ -3,13 +3,15 @@
 #define IN 1
 #define OUT 0
 
+#define LEN_WORD (10)
+
 int main (void)
 {
     int c, state, cnt_chars, histogram[10];
 
     state = OUT;
     cnt_chars = 0;
-    for (int i = 0; i < 10; ++i)
+    for (int i = 0; i < LEN_WORD; ++i)
         histogram[i] = 0;
 
     while ((c = getchar()) != EOF) {    
@@ -21,13 +23,19 @@ int main (void)
         }
         
         if (state == OUT && cnt_chars != 0) {
-            ++histogram[cnt_chars];
+            if (cnt_chars >= LEN_WORD)
+                ++histogram[LEN_WORD - 1];
+            else
+                ++histogram[cnt_chars];
             cnt_chars = 0;
         }
     }
 
     if (state == IN && cnt_chars != 0) {
-        ++histogram[cnt_chars];
+        if (cnt_chars >= LEN_WORD)
+            ++histogram[LEN_WORD - 1];
+        else
+            ++histogram[cnt_chars];
     }
 
     for (int i = 0; i < 10; ++i)
