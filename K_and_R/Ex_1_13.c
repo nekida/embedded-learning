@@ -39,13 +39,14 @@ int main (void)
     }
 
     for (int i = 1; i < LEN_WORD; ++i) {
-        printf ("%d - ", histogram[i]);
+        if (i == LEN_WORD - 1)
+            printf ("%d+ - ", i);
+        else
+            printf ("%d - ", i);
         for (int j = 0; j < histogram[i]; ++j)
-            printf ("*");
-        printf ("\n");
+            putchar ('*');
+        putchar ('\n');
     }
-
-    putchar('\n');
 
     return 0;
 }
